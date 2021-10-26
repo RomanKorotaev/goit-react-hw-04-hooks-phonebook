@@ -18,8 +18,8 @@ export default function ContactFormHooks ({onFormSubmit}) {
             setName(value);
           break;
 
-          case "numbe":
-            setNumber(number);
+          case "number":
+            setNumber(value);
           break;
 
           default:

@@ -5,9 +5,13 @@ import React, { Component } from "react";
 import shortid from 'shortid'
 
 import ContactForm from "./components/ContactForm";
-import ContactFormHooks from './components/ContactForm/ContactFormHooks'
+import ContactFormHooks from './components/ContactForm/ContactFormHooks';
+
 import ContactsList from "./components/ContactsList";
+import ContactsListHooks from './components/ContactsList/ContactListHooks'
+
 import Filter from "./components/Filter";
+import FilterHooks from "./components/Filter/FilterHooks";
 
 
 class App extends Component {
@@ -111,10 +115,12 @@ const visibleContacts = this.getVisibleContact();
         <h2 className={s.contactsTitle}>Contacts</h2>
 
           {/* Это фильтр. Его значение мы не будем хранить в state стейте данной формы. Значение живого фильтра будет хранится в стейте App */}
-          <Filter value = {this.state.filter} handleFilter = {this.changeFilter}/>
+          {/* <Filter value = {this.state.filter} handleFilter = {this.changeFilter}/> */}
+          <FilterHooks value = {this.state.filter} handleFilter = {this.changeFilter}/>
 
-          {/* <ContactsList contacts={contacts} /> */}
-          <ContactsList contacts={visibleContacts} onDeleteContact = {this.deleteContact}/>       
+
+          {/* <ContactsList contacts={visibleContacts} onDeleteContact = {this.deleteContact}/> */}
+          <ContactsListHooks contactsArray={visibleContacts} onDeleteContact = {this.deleteContact}/>          
 
       </div>
     );
