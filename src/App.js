@@ -5,6 +5,7 @@ import React, { Component } from "react";
 import shortid from 'shortid'
 
 import ContactForm from "./components/ContactForm";
+import ContactFormHooks from './components/ContactForm/ContactFormHooks'
 import ContactsList from "./components/ContactsList";
 import Filter from "./components/Filter";
 
@@ -97,15 +98,15 @@ class App extends Component {
 const visibleContacts = this.getVisibleContact();
 
 
-console.log ("Рендерим из  App текущий список контактов : ", this.state.contacts)
+// console.log ("Рендерим из  App текущий список контактов : ", this.state.contacts)
 
     const { contacts } = this.state;
     return (
       <div className={s.container}>
          
          <h1 className={s.titlePhonebook}>Phonebook</h1>
-         <ContactForm name={this.state.name}  number={this.state.number} onFormSubmit={this.formSubmitHandler} />
-       
+         {/* <ContactForm name={this.state.name}  number={this.state.number} onFormSubmit={this.formSubmitHandler} /> */}
+         <ContactFormHooks name={this.state.name}  number={this.state.number} onFormSubmit={this.formSubmitHandler} />
 
         <h2 className={s.contactsTitle}>Contacts</h2>
 

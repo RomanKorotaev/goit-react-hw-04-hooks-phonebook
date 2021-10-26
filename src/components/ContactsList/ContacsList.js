@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import s from "./ContactsList.module.css";
 import PropTypes from 'prop-types';
 import Contact from '../Contact'
+import ContactHooks from '../Contact/ContactHooks'
 
 class ContactsList extends Component {
 
@@ -27,7 +28,8 @@ class ContactsList extends Component {
             <li  className= {s.item}  key = {id}>
 
               {/* ВНИМАНИЕ!  Важный синтаксис во время прокидывания пропов по цепочке: onDelete = {()=>onDeleteContact(id)} */}
-                  <Contact name={name} number ={number} onDelete = {()=>onDeleteContact(id)} />
+                  {/* <Contact name={name} number ={number} onDelete = {()=>onDeleteContact(id)} /> */}
+                  <ContactHooks name={name} number ={number} onDelete = {()=>onDeleteContact(id)} />
             </li>
           ))}
       </ul>
