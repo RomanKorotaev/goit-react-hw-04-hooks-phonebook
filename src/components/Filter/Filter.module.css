@@ -1,0 +1,14 @@
+.filterTitle {
+    display: block;
+    font-size: 30px;
+    font-style: italic;
+    color: white;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .filterInputStyle {
+    font-size: 20px;
+    width: 370px;
+    margin-bottom: 50px;
+  }

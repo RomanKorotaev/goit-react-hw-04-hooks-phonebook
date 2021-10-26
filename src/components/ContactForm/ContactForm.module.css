@@ -1,0 +1,29 @@
+.nameTitle {
+  display: block;
+
+  font-size: 30px;
+  font-weight: 700;
+  font-style: italic;
+  color: white;
+  margin-bottom: 20px;
+}
+
+.inputStyleClass {
+  margin-left: 15px;
+  font-size: 20px;
+}
+
+.addBtm {
+  font-size: 20px;
+  font-style: normal;
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+  background-color:lightgrey;
+  border-radius: 5px;
+}
+
+.addBtm:hover {
+  background-color:white;
+  font-style:italic;
+}

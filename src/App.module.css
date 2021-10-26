@@ -1,0 +1,58 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  text-align: left;
+  background-color: rgb(58, 20, 2);
+  /* background-image: url("./image/phoneBookBackgr.jpg"); */
+  background-image: url("./image/woodTable.jpg");
+  /* background-size: cover; */
+  background-repeat: no-repeat;
+  background-repeat:repeat;
+}
+
+.container {
+  width: 500px;
+  height: auto;
+
+  padding: 20px;
+
+  /* margin-left: 170px; */
+
+  margin: 0 auto;
+  margin-top: 30px;
+
+  border: 1px solid white;
+  border-radius: 10px;
+}
+
+.titlePhonebook {
+    font-size: 35px;
+    color: white;
+    text-align: center;
+}
+
+.contactsTitle {
+  color: white;
+  font-size: 25px;
+  font-weight: 700;
+  font-style: italic;
+ 
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+}
+

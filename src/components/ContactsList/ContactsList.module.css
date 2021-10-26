@@ -1,0 +1,42 @@
+.contactsListTitle {
+    color: white;
+    font-size: 25px;
+    font-weight: 700;
+    font-style: italic;
+   
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.item {
+
+   display: flex;
+   justify-content: space-between; 
+
+    color: white;
+    font-size: 25px;
+
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+.ContactsListStyle{
+  list-style: none;
+  border-radius: 0px 0px 15px 15px;
+  
+}
+
+
+.deleteBtn {
+    font-style: normal;
+    font-size: 20px;
+  background-color:lightgrey;
+  border-radius: 5px;
+}
+
+.deleteBtn:hover {
+    background-color:white;
+    font-style:italic;
+  }
