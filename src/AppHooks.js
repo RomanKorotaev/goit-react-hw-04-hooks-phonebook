@@ -13,15 +13,18 @@ import ContactsListHooks from './components/ContactsList/ContactListHooks'
 import Filter from "./components/Filter";
 import FilterHooks from "./components/Filter/FilterHooks";
 
+import db from './db.json'
+
 
 function AppHooks () {
 
-const [ contacts, setContacts] = useState ([
-    {id: 'id-1', name: 'Rosie Simpson', number: '459-12-56'},
-    {id: 'id-2', name: 'Hermione Kline', number: '443-89-12'},
-    {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
-    {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
-  ]);
+// Записываем стартовые значения контактов в СТЕЙТ нашего компонента
+  localStorage.setItem('contactsLocalSt_db',   JSON.stringify( [...db] ) );
+
+
+const [ contacts, setContacts] = useState ( JSON.parse(localStorage.getItem('contactsLocalSt_db')) );
+
+console.log ( 'contacts =', contacts );
 
   const [ name, setName] = useState ('');
   const [ number, setNumber] = useState ('');
@@ -60,12 +63,14 @@ const [ contacts, setContacts] = useState ([
              return;
                 } else {
                   // Обновляем прежнее состояние массива через распыление
-                  // setContacts ([newContact, ...prevState.contacts ])
-                  setContacts ([newContact, ...contacts ])
-                    }         
+                   setContacts ([newContact, ...contacts ])
+               }         
       };
 
-
+      // Записываем новый массив контактов в localStorage
+      localStorage.setItem('contactsLocalSt_db',   JSON.stringify( contacts)  );
+    
+    
       const changeFilter = e => {
         setFilter (e.currentTarget.value )
       }
@@ -79,14 +84,15 @@ const [ contacts, setContacts] = useState ([
       }
 
 
-
-
   const deleteContact = (contactId) => {
     setContacts ( contacts.filter ( contact=> contact.id !== contactId))
-  //   this.setState ( prevState => ({
-  //     contacts: prevState.contacts.filter ( contact=> contact.id !== contactId)
-  //   }) )
+    
+    // Записываем в localStorage обновлённый массив после удаления одного контакта
+    localStorage.setItem('contactsLocalSt_db',   JSON.stringify( contacts)  );
+
   }
+
+
 
   const visibleContacts = getVisibleContact();
 
